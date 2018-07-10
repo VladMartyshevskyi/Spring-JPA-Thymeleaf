@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head">
+</head>
+<script src="https://use.fontawesome.com/c0c323679c.js"></script>
+
+
+<body>
+
+	<nav th:replace="fragments/header :: nav"></nav>
+
+	<!-- HOME SECTION -->
+	<header id="home-section">
+		<div class="dark-overlay">
+			<div class="home-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 d-none d-lg-block">
+							<div class="jumbotron" style="opacity: 0.9;">
+								<h1 class="display-3">Edit Card</h1>
+
+								<form class="edit-card" th:action="@{/cards/update/{id}(id=${card.id})}"
+									th:object="${card}" th:method="post" method="post">
+									<div class="form-group">
+										<label for="bank">Bank</label> 
+										
+										<input type="text"
+											class="form-control" th:field="*{bank}" id="bank"
+											placeholder="Enter your bank">
+									</div>
+									<div class="form-group">
+										<label for="cvv">CVV</label> 
+										<input type="number"
+											class="form-control" th:field="*{cvv}"
+											id="cvv" placeholder="Enter cvv">
+									</div>
+									<div class="form-group">
+										<label for="expiresMonth">Expires Month</label> <input
+											type="text" class="form-control" th:field="*{expiresMonth}"
+											id="expiresMonth" placeholder="Enter expires month">
+									</div>
+									<div class="form-group">
+										<label for="expiresYear">Expires Year</label> <input
+											type="text" class="form-control" th:field="*{expiresYear}"
+											id="expiresYear" placeholder="Enter expires year">
+									</div>
+									<div class="form-group">
+										<label for="number">Number</label> 
+										
+										<input type="text"
+											class="form-control" th:field="*{number}" id="number"
+											placeholder="Enter number">
+									</div>
+									<a class="btn btn-dark" th:href="@{/cards}">Cancel</a>
+									<button type="submit" class="btn btn-primary">Submit</button>
+
+								</form>
+							</div>
+						</div>
+						<div class="col-lg-4"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+
+
+	<div th:replace="fragments/jsScripts :: scripts"></div>
+
+</body>
+</html>

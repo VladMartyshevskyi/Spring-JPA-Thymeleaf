@@ -38,8 +38,11 @@ public class User {
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private List<Role> roles = new ArrayList<>();
+    
+    @OneToMany(mappedBy="user")
+    private List<Card> cards = new ArrayList<>();
 
-    public User() {
+	public User() {
     }
 
     public User(String name, String surname, String username, String email, String password, boolean enabled) {
@@ -125,4 +128,13 @@ public class User {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    public List<Card> getCards() {
+		return cards;
+	}
+
+	public void setCards(List<Card> cards) {
+		this.cards = cards;
+	}
+
 }

@@ -1,9 +1,9 @@
 package com.kemal.spring.web.controllers.viewControllers;
 
-import com.kemal.spring.domain.User;
-import com.kemal.spring.service.EmailService;
-import com.kemal.spring.service.UserService;
-import com.kemal.spring.web.dto.UserDto;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
+import com.kemal.spring.domain.User;
+import com.kemal.spring.service.EmailService;
+import com.kemal.spring.service.UserService;
+import com.kemal.spring.web.dto.UserDto;
 
 /**
  * Created by Keno&Kemo on 17.11.2017..
@@ -56,14 +58,14 @@ public class RegisterController {
 
 
             /*String appUrl = request.getScheme() + "://" + request.getServerName();
-
+*/
             SimpleMailMessage registrationEmail = new SimpleMailMessage();
             registrationEmail.setTo(user.getEmail());
             registrationEmail.setSubject("Registration Confirmation");
             registrationEmail.setText("Please confirm the registration");
             registrationEmail.setFrom("email@email.com");
 
-            emailService.sendEmail(registrationEmail);*/
+            emailService.sendEmail(registrationEmail);
 
             modelAndView.addObject("confirmationMessage", "A confirmation e-mail has been sent to "
                                     + userDto.getEmail());

@@ -39,6 +39,7 @@
                 <!--======================================================================================-->
                 <li class="nav-item d-flex">
                     <span class="shopping-cart align-self-center mx-2 " sec:authorize="hasRole('ROLE_USER')">
+                    	
                         <a style="background-color: transparent!important;"
                            data-toggle="collapse"
                            href="#shopping-cart-collapse" aria-expanded="false"
@@ -78,7 +79,18 @@
                 </li>
                 <!--================================================================================================-->
                 <!--endregion-->
-
+				
+				<!--region For ROLE_USER display link to cards-->
+                <!--================================================================================================-->
+                <li class="nav-item d-flex">
+                    <i class="align-self-center fas fa-user-cog" style="color: white;"></i>
+                    <a class="nav-link" sec:authorize="hasRole('ROLE_USER')" th:href="@{/cards/}" href="/cards">
+                        My Cards
+                    </a>
+                </li>
+                <!--================================================================================================-->
+                <!--endregion-->
+                
 
                 <!--region Logout button-->
                 <!--==================================================================================-->

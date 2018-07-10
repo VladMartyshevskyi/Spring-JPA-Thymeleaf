@@ -50,5 +50,19 @@ function deleteEntity() {
         }
     });
 }
+function deleteCard(row, id) {
+	   
+    let deleteCardUrl = '/cards/delete/' + id;
 
+    $.ajax({
+        url: deleteCardUrl,
+        type: 'DELETE',
+        success: function () {
+
+            let table = $("#card-table");
+            table[0].deleteRow(row.parentNode.parentNode.rowIndex);
+
+        }
+    });
+}
 
