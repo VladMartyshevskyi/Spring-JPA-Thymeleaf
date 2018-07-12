@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.List;
 
 /**
@@ -46,4 +47,8 @@ public class restController {
             return new ResponseEntity<>(userToDelete, HttpStatus.NO_CONTENT);
         }
     }
+	@GetMapping("/principal")
+	public Principal getPrincipal(Principal principal) {
+		return principal;
+	}
 }

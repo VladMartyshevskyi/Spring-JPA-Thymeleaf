@@ -41,14 +41,13 @@
 											<td><a style="text-decoration: none; color: blue"
 												th:href="@{/cards/update/{id}(id=${card.id})}"
 												class="editBtn" data-toggle="tooltip" data-placement="right"
-												title="Edit card"> <i class="fa fa-edit"></i>
+												title="Edit card">Edit card</a>
 											</a></td>
 
 											<td><a id="remove-link"
 												style="text-decoration: none; color: red"
 												data-placement="right" title="Remove card"
-												th:onclick="'deleteCard(this, ' + ${card.id} + ')'"> > <i
-													class="fa fa-times" aria-hidden="true"></i>
+												th:onclick="'deleteCard(this, ' + ${card.id} + ')'"> > Delete card</a>
 											</a></td>
 
 										</tr>

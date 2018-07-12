@@ -1,15 +1,18 @@
 package com.kemal.spring.domain;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
-
-/**
- * Created by Keno&Kemo on 30.09.2017..
- */
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class User {
@@ -31,9 +34,12 @@ public class User {
     private String password;
 
     private boolean enabled;
+    
+    @Column(length = 20)
+    private String facebookId;
 
-    @JsonManagedReference
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+	@JsonManagedReference
+    @ManyToMany(cascade = {CascadeType.MERGE})
     @JoinTable(name = "users_roles",
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
@@ -135,6 +141,14 @@ public class User {
 
 	public void setCards(List<Card> cards) {
 		this.cards = cards;
+	}
+	
+    public String getFacebookId() {
+		return facebookId;
+	}
+
+	public void setFacebookId(String facebookId) {
+		this.facebookId = facebookId;
 	}
 
 }

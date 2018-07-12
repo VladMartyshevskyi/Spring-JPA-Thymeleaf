@@ -1,6 +1,7 @@
 package com.kemal.spring.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -20,6 +21,7 @@ import com.kemal.spring.domain.User;
 import com.kemal.spring.domain.UserRepository;
 import com.kemal.spring.web.dto.UserDto;
 import com.kemal.spring.web.dto.UserUpdateDto;
+import com.mysql.fabric.xmlrpc.base.Array;
 
 /**
  * Created by Keno&Kemo on 18.10.2017..
@@ -52,7 +54,7 @@ public class UserService {
     @Cacheable(value = "cache.allUsersEagerly")
     public List<User> findAllEagerly() {
         return userRepository.findAllEagerly();
-    }
+    } 
 
     @Cacheable(value = "cache.allUsersPageable")
     public Page<User> findAllPageable(Pageable pageable) {
@@ -85,7 +87,6 @@ public class UserService {
     public void delete(Long id) {
         userRepository.delete(id);
     }
-
     public User createNewAccount(UserDto userDto) {
         User user = new User();
         user.setName(userDto.getName());
@@ -96,6 +97,7 @@ public class UserService {
         user.setRoles(Collections.singletonList(roleService.findByName("ROLE_USER")));
         return user;
     }
+
 
     public User getUpdatedUser(User persistedUser, UserUpdateDto userUpdateDto) {
         persistedUser.setName(userUpdateDto.getName());
@@ -151,5 +153,18 @@ public class UserService {
         }
         return usernameAlreadyExists;
     }
+
+
+	public void createFacebookUser(String username) {
+		User existingUser = userRepository.findByUsername(username);
+		if(existingUser == null) {
+			User user = new User();
+			user.setUsername(username);
+			user.setFacebookId(username);
+			user.setRoles(Collections.singletonList(roleService.findByName("ROLE_USER")));
+			userRepository.save(user);
+		}
+		
+	}
     
 }

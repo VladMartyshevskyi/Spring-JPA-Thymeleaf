@@ -7,9 +7,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by Keno&Kemo on 04.11.2017..
- */
+
 @Entity
 public class Role {
     @Id
@@ -21,7 +19,7 @@ public class Role {
     private String name;
 
     @JsonBackReference
-    @ManyToMany (mappedBy = "roles", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany (mappedBy = "roles", cascade = {CascadeType.MERGE})
     private Set<User> users = new HashSet<>();
 
     public Role() {

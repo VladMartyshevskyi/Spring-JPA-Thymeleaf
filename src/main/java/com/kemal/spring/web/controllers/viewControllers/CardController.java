@@ -38,6 +38,7 @@ public class CardController {
 		return "website/cards";
 	}
 
+
 	@DeleteMapping("/cards/delete/{id}")
 	public ResponseEntity deleteCard(@PathVariable Long id) {
 		cardService.deleteById(id);

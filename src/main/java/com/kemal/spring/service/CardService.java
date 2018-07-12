@@ -31,7 +31,8 @@ public class CardService {
 	public Card findById(Long id) {
 		return cardRepository.findById(id);
 	}
-
+	@Transactional
+	@PreAuthorize("@SecurityService.isCardOwner(authentication, #card) or hasRole('ROLE_ADMIN')")
 	public void update(Card card) {
 		Card foundCard = cardRepository.findById(card.getId());
 		if(foundCard != null) {
