@@ -8,10 +8,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Keno&Kemo on 03.12.2017..
- */
-
 @Service
 public class UserUpdateDtoService {
 

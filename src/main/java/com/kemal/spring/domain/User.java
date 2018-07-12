@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class User {
+	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
