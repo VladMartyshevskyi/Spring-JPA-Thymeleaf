@@ -20,7 +20,7 @@ public class UserUpdateDtoService {
     }
 
     public List<UserUpdateDto> findAll(){
-        List<User> userList = userService.findAllEagerly();
+        List<User> userList = userService.findAll();
         List<UserUpdateDto> userUpdateDtosList = new ArrayList<>();
 
         for(User user : userList){

@@ -62,7 +62,7 @@ public class UsersController {
 		model.addAttribute("pager", pager);
 		return "adminPage/user/users";
 	}
-
+/*
 	@GetMapping("/users/{id}")
 	public String getEditUserForm(@PathVariable Long id, Model model) {
 		UserUpdateDto userUpdateDto = userUpdateDtoService.findById(id);
@@ -159,6 +159,6 @@ public class UsersController {
 			redirectAttributes.addFlashAttribute("userHasBeenSaved", true);
 			return "redirect:/adminPage/users";
 		}
-	}
+	}*/
 
 }

@@ -17,11 +17,7 @@ import com.kemal.spring.service.EmailService;
 import com.kemal.spring.service.UserService;
 import com.kemal.spring.web.dto.UserDto;
 
-/**
- * Created by Keno&Kemo on 17.11.2017..
- */
 @Controller
-@RequestMapping("")
 public class RegisterController {
     private UserService userService;
     private EmailService emailService;
@@ -33,11 +29,11 @@ public class RegisterController {
 
     @PostMapping(value = "/submit-registration")
     public ModelAndView saveUser(ModelAndView modelAndView, @ModelAttribute("userDto") @Valid final UserDto userDto,
-                                 BindingResult bindingResult, HttpServletRequest request, Errors errors){
+                                 BindingResult bindingResult){
 
-        User userExists = userService.findByEmail(userDto.getEmail());
+    	userService.createUser(userDto);
+        /*User userExists = userService.findByEmail(userDto.getEmail());
 
-        System.out.println(userExists);
 
         if (userExists != null) {
             modelAndView.setViewName("website/register");
@@ -48,17 +44,10 @@ public class RegisterController {
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("website/register");
         }
-        else { // new user so we create user and send confirmation e-mail
-
+        else { 
             User user = userService.createNewAccount(userDto);
-            // Disable user until they click on confirmation link in email
-
             user.setEnabled(true);
             userService.save(user);
-
-
-            /*String appUrl = request.getScheme() + "://" + request.getServerName();
-*/
             SimpleMailMessage registrationEmail = new SimpleMailMessage();
             registrationEmail.setTo(user.getEmail());
             registrationEmail.setSubject("Registration Confirmation");
@@ -71,7 +60,7 @@ public class RegisterController {
                                     + userDto.getEmail());
             modelAndView.setViewName("website/registered");
         }
-
+*/
         return modelAndView;
     }
 }
