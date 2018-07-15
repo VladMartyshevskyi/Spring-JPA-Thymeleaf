@@ -1,11 +1,9 @@
 package com.kemal.spring.web.dto;
 
-import java.util.List;
 
+import javax.validation.constraints.NotNull;
 import com.kemal.spring.customAnnotations.PasswordMatches;
 import com.kemal.spring.customAnnotations.ValidEmail;
-import com.kemal.spring.domain.Role;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,17 +17,19 @@ public class UserDto {
 
     private Long id;
 
+    @NotNull
     private String name;
-
+    @NotNull
     private String surname;
-
+    @NotNull
     private String username;
 
     @ValidEmail
+    @NotNull
     private String email;
-
+ 
     private String password;
 
-    private boolean enabled;
+    private boolean enabled = true;
 
 }

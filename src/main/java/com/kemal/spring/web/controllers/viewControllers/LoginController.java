@@ -20,7 +20,12 @@ public class LoginController {
 
 	@Autowired
 	private UserService userService;
-    // Login form with error
+    
+	@GetMapping(value = "/login")
+    public String login (){
+        return "website/login";
+    }
+	
     @GetMapping("/login-error")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
@@ -37,4 +42,6 @@ public class LoginController {
 
     	return "redirect:/index";
     }
+    
+    
 }

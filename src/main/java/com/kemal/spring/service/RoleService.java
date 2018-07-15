@@ -3,6 +3,8 @@ package com.kemal.spring.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -23,8 +25,7 @@ public class RoleService {
 	@Autowired
 	private UserRoleRepository userRoleRepository;
 
-	// region Find methods
-	// ==================================================================================
+
 	@Cacheable("cache.allRoles")
 	public List<Role> findAll() {
 		return roleRepository.findAll();
@@ -39,25 +40,13 @@ public class RoleService {
 	public Role findById(Long id) {
 		return roleRepository.findById(id);
 	}
-	// ==================================================================================
-	// endregion
-
+	
 	@CacheEvict(value = { "cache.allRoles", "cache.roleByName", "cache.roleById" }, allEntries = true)
 	public void save(Role role) {
 		roleRepository.save(role);
 	}
-
-	public boolean checkIfRoleNameIsTaken(List<Role> allRoles, Role role, Role persistedRole) {
-		boolean roleNameAlreadyExists = false;
-		for (Role role1 : allRoles) {
-			// Check if the role name is edited and if it is taken
-			if (!role.getName().equals(persistedRole.getName()) && role.getName().equals(role1.getName())) {
-				roleNameAlreadyExists = true;
-			}
-		}
-		return roleNameAlreadyExists;
-	}
-
+	
+	@Transactional
 	public void assignRole(User user, Role role) {
 		List<Role> roles = getAssignedRoles(user);
 		if (!roles.contains(role)) {
@@ -69,6 +58,10 @@ public class RoleService {
 		return userRoleRepository.findByUserId(user.getId()).stream()
 				.map(userRole -> findById(userRole.getRoleId()))
 				.collect(Collectors.toList());
+	}
+	@Transactional
+	public void removeAllRoles(User user) {
+		userRoleRepository.deleteByUserId(user.getId());
 	}
 
 }

@@ -21,7 +21,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private RoleService roleService;
 
    
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userService.findByEmail(username);
