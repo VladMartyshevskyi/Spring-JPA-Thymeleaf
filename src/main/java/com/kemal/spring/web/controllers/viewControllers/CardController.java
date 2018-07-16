@@ -33,8 +33,8 @@ public class CardController {
 
 	@GetMapping("/cards")
 	public String showCards(Model model, Principal principal) {
-		List<Card> cards = userService.findByUsername(principal.getName()).getCards();
-		model.addAttribute("cards", cards);
+		//List<Card> cards = userService.findByUsername(principal.getName()).getCards();
+		//model.addAttribute("cards", cards);
 		return "website/cards";
 	}
 

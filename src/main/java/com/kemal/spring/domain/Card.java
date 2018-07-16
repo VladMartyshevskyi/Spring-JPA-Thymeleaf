@@ -13,8 +13,10 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 @Entity
 public class Card {
 	
@@ -40,9 +42,6 @@ public class Card {
 	@JsonIgnore
 	private User user;
 
-	public Card() {
-		
-	}
 	public Card(String number, Integer cvv, String bank, Integer expiresMonth, Integer expiresYear, User user) {
 		this.number = number;
 		this.cvv = cvv;

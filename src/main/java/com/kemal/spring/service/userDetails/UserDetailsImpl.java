@@ -2,6 +2,9 @@ package com.kemal.spring.service.userDetails;
 
 import com.kemal.spring.domain.Role;
 import com.kemal.spring.domain.User;
+import com.kemal.spring.service.RoleService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,21 +13,20 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 
-/**
- * Created by Keno&Kemo on 04.11.2017..
- */
-
-
 public class UserDetailsImpl implements UserDetails {
+	
+	
     private User user;
-    public UserDetailsImpl(User user) {
+    private List<Role> roles;
+    public UserDetailsImpl(User user, List<Role> roles) {
         this.user = user;
+        this.roles = roles;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Collection<GrantedAuthority> authorities = new HashSet<>();
-        List<Role> roles = user.getRoles();
+  
         for( Role role : roles ) {
             authorities.add( new SimpleGrantedAuthority(role.getName()));
         }

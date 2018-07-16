@@ -1,23 +1,26 @@
 package com.kemal.spring.service.userDetails;
 
-import com.kemal.spring.domain.User;
-import com.kemal.spring.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by Keno&Kemo on 18.02.2018..
- */
+import com.kemal.spring.domain.User;
+import com.kemal.spring.service.RoleService;
+import com.kemal.spring.service.UserService;
+
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
+	
+	@Autowired
     private UserService userService;
+	
+	@Autowired
+    private RoleService roleService;
 
-    public UserDetailsServiceImpl(UserService userService) {
-        this.userService = userService;
-    }
-
+   
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userService.findByEmail(username);
@@ -25,6 +28,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
 
-        return new UserDetailsImpl(user);
+        return new UserDetailsImpl(user, roleService.getAssignedRoles(user));
     }
 }

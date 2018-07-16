@@ -49,7 +49,8 @@ public class RolesController {
         Role persistedRole = roleService.findById(id);
         List<Role> allRoles = roleService.findAll();
 
-        boolean roleNameAlreadyExists = roleService.checkIfRoleNameIsTaken(allRoles, role, persistedRole);
+     //   boolean roleNameAlreadyExists = roleService.checkIfRoleNameIsTaken(allRoles, role, persistedRole);
+        boolean roleNameAlreadyExists = false;
         boolean hasErrors = false;
 
         if (roleNameAlreadyExists) {

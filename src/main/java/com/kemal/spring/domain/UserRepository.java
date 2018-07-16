@@ -7,22 +7,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by Keno&Kemo on 30.09.2017..
- */
-
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-
-    @Query("SELECT u FROM User u JOIN FETCH u.roles WHERE u.email = (:email)")
-    User findByEmail(@Param("email") String email);
-
-
-
-
+	
+	User findByEmailOrUsername(String email, String username);
+    User findByEmail(String email);
     User findById(Long id);
     User findByUsername(String username);
 
-    @Query("SELECT u FROM User u JOIN FETCH u.roles")
-    List<User> findAllEagerly();
 }

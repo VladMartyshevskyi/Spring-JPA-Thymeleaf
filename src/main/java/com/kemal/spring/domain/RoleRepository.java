@@ -1,10 +1,9 @@
 package com.kemal.spring.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-/**
- * Created by Keno&Kemo on 04.11.2017..
- */
+@Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
     Role findByName(String name);
 

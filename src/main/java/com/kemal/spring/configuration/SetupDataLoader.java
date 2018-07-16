@@ -1,6 +1,7 @@
 package com.kemal.spring.configuration;
 
 import com.kemal.spring.domain.Role;
+import com.kemal.spring.domain.RoleRepository;
 import com.kemal.spring.domain.User;
 import com.kemal.spring.service.RoleService;
 import com.kemal.spring.service.UserService;
@@ -91,9 +92,11 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
             user.setUsername(username);
             user.setPassword(bCryptPasswordEncoder.encode(password));
             user.setEmail(email);
-            user.setRoles(userRoles);
             user.setEnabled(true);
             userService.save(user);
+            for(Role role : userRoles) {
+            	roleService.assignRole(user, role);
+            }
         }
     }
 }
