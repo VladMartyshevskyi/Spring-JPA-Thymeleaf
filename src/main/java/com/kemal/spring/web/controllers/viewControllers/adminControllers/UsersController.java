@@ -61,8 +61,8 @@ public class UsersController {
 	}
 
 	@PostMapping("/users/{id}")
-	public String updateUser(Model model, @PathVariable Long id, @ModelAttribute("user") @Valid final UserDto userDto,
-			@ModelAttribute("userRoles") final ArrayList<Role> roles) {
+	public String updateUser(Model model, @PathVariable Long id, @ModelAttribute("user") @Valid UserDto userDto,
+			@ModelAttribute("userRoles") ArrayList<Role> roles) {
 		userService.updateUser(userDto, roles);
 		return "redirect:/adminPage/users";
 	}

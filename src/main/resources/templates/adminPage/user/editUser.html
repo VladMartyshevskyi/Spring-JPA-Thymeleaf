@@ -14,7 +14,7 @@
 					<div id="admin-content">
 						<form class="admin-form"
 							th:action="@{/adminPage/users/{id}(id=${user.id})}"
-							th:object="${user}"th 	th:method="post" method="post">
+							th:object="${user}" 	th:method="post" method="post">
 							<ul class="global-errors" th:if="${#fields.hasErrors('global')}">
 								<li class="text-danger"
 									th:each="err : ${#fields.errors('global')}" th:text="${err}">
@@ -49,28 +49,28 @@
 							</div>
 							<div class="form-group">
 								<label for="editedUserRoles">Roles</label>
-							  
+							    <!--
 								<div>
 									<p th:each="role : ${allRoles}" >
 										<input id="editedUserRoles" type="checkbox"
 											name="userRoles" id="userRoles"
-											th:checked="${userRoles.contains(role)}"
+											th:field="${userRoles}"
 											
 											th:value="${role.id}" /> <label th:text="${role.name}">Role</label>
 									</p>
 								</div>
+								-->
 							
-							<!--  
-								<select class="form-control" name="userRoles" id="UserRoles"
+								<select class="form-control" name="userRoles" id="UserRoles" 
 									multiple="multiple" >
 									<option th:each="role : ${allRoles}"
-										
-										 th:value="${role.id}"
-										 th:selected="${userRoles.contains(role)}"
-										 th:text="${role.name}">Part
+									
+										th:selected="${userRoles.contains(role)}"
+                    					th:value="${role.id}"
+										th:text="${role.name}">Part
 										name</option>
 								</select>
-								-->
+								
 							</div>
 							<div class="form-group">
 								<label for="editUserEnabled">Enabled</label>
