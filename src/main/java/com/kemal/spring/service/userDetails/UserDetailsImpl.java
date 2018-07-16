@@ -14,53 +14,53 @@ import java.util.HashSet;
 import java.util.List;
 
 public class UserDetailsImpl implements UserDetails {
-	
-	
-    private User user;
-    private List<Role> roles;
-    public UserDetailsImpl(User user, List<Role> roles) {
-        this.user = user;
-        this.roles = roles;
-    }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        Collection<GrantedAuthority> authorities = new HashSet<>();
-  
-        for( Role role : roles ) {
-            authorities.add( new SimpleGrantedAuthority(role.getName()));
-        }
-        return authorities;
+	private User user;
+	private List<Role> roles;
 
-    }
+	public UserDetailsImpl(User user, List<Role> roles) {
+		this.user = user;
+		this.roles = roles;
+	}
 
-    @Override
-    public String getPassword() {
-        return user.getPassword();
-    }
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		Collection<GrantedAuthority> authorities = new HashSet<>();
 
-    @Override
-    public String getUsername() {
-        return user.getUsername();
-    }
+		for (Role role : roles) {
+			authorities.add(new SimpleGrantedAuthority(role.getName()));
+		}
+		return authorities;
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
+	}
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
+	@Override
+	public String getPassword() {
+		return user.getPassword();
+	}
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
+	@Override
+	public String getUsername() {
+		return user.getUsername();
+	}
 
-    @Override
-    public boolean isEnabled() {
-        return user.isEnabled();
-    }
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return user.isEnabled();
+	}
 }

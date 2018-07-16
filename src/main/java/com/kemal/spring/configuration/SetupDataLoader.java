@@ -5,6 +5,8 @@ import com.kemal.spring.domain.RoleRepository;
 import com.kemal.spring.domain.User;
 import com.kemal.spring.service.RoleService;
 import com.kemal.spring.service.UserService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -14,28 +16,18 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by Keno&Kemo on 04.11.2017..
- */
+
 @Component
 public class SetupDataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
+	@Autowired
     private boolean alreadySetup = false;
-
+	@Autowired
     private UserService userService;
-
+	@Autowired
     private RoleService roleService;
-
+	@Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-    public SetupDataLoader(UserService userService, RoleService roleService, BCryptPasswordEncoder
-            bCryptPasswordEncoder) {
-        this.userService = userService;
-        this.roleService = roleService;
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-    }
-
-    // API
 
     @Override
     @Transactional
@@ -44,19 +36,12 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
             return;
         }
 
-        //region Creating roles
-        //================================================================================
         Role roleAdmin = createRoleIfNotFound("ROLE_ADMIN");
         Role roleUser = createRoleIfNotFound("ROLE_USER");
 
         List<Role> adminRoles = Collections.singletonList(roleAdmin);
         List<Role> userRoles = Collections.singletonList(roleUser);
-        //================================================================================
-        //endregion
 
-
-        //region Creating users
-        //================================================================================
         createUserIfNotFound("admin@gmail.com", "Admin", "Admin",
                 "admin", "admin", adminRoles);
 
@@ -64,8 +49,7 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
             createUserIfNotFound("user" + i + "@gmail.com", "User" + i,
                     "User" + i, "user" + i, "user" + i, userRoles);
         }
-        //================================================================================
-        //endregion
+
 
         alreadySetup = true;
     }

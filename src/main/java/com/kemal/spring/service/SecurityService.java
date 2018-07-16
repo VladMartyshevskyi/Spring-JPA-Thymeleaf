@@ -22,17 +22,16 @@ public class SecurityService {
 		User user = userRepository.findByUsername(authentication.getName());
 		Card card = cardRepository.findById(id);
 
-		if (card.getUser().equals(user)) {
+		if (card.getUserId().equals(user.getId())) {
 			return true;
 		}
 		return false;
 	}
 
 	public Boolean isCardOwner(Authentication authentication, Card card) {
-
 		User user = userRepository.findByUsername(authentication.getName());
 		Card cardWithUser = cardRepository.findById(card.getId());
-		if (cardWithUser.getUser().equals(user)) {
+		if (cardWithUser.getUserId().equals(user.getId())) {
 			return true;
 		}
 		return false;

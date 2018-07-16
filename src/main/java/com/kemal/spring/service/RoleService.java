@@ -25,7 +25,6 @@ public class RoleService {
 	@Autowired
 	private UserRoleRepository userRoleRepository;
 
-
 	@Cacheable("cache.allRoles")
 	public List<Role> findAll() {
 		return roleRepository.findAll();
@@ -45,7 +44,7 @@ public class RoleService {
 	public void save(Role role) {
 		roleRepository.save(role);
 	}
-	
+
 	@Transactional
 	public void assignRole(User user, Role role) {
 		List<Role> roles = getAssignedRoles(user);

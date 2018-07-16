@@ -3,6 +3,8 @@ package com.kemal.spring.web.controllers.viewControllers.adminControllers;
 import com.kemal.spring.domain.Role;
 import com.kemal.spring.service.RoleService;
 import com.kemal.spring.web.dto.UserDto;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,17 +15,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * Created by Keno&Kemo on 20.11.2017..
- */
 @Controller
 @RequestMapping("/adminPage")
 public class RolesController {
+	
+	@Autowired
     private RoleService roleService;
-
-    public RolesController(RoleService roleService) {
-        this.roleService = roleService;
-    }
 
     @GetMapping("/roles")
     public ModelAndView showRoles() {
