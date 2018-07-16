@@ -15,7 +15,6 @@ import com.kemal.spring.domain.User;
 import com.kemal.spring.domain.UserRepository;
 import com.kemal.spring.web.dto.UserDto;
 
-
 @Service
 public class UserService {
 
@@ -25,6 +24,8 @@ public class UserService {
 	private UserRepository userRepository;
 	@Autowired
 	private RoleService roleService;
+	@Autowired
+	private CardService cardService;
 
 	@Cacheable(value = "cache.allUsers")
 	public List<User> findAll() {
@@ -60,6 +61,7 @@ public class UserService {
 			"cache.allUsersEagerly" }, allEntries = true)
 	public void delete(Long id) {
 		roleService.removeAllRoles(findById(id));
+		cardService.deleteByUserId(id);
 		userRepository.delete(id);
 	}
 
@@ -73,6 +75,7 @@ public class UserService {
 			roleService.assignRole(user, roleService.findByName("ROLE_USER"));
 		}
 	}
+	
 	public void updateUser(UserDto userDto, List<Role> roles) {
 		User user = findById(userDto.getId());
 		save(UserConverter.convertToUser(userDto, user.getPassword()));

@@ -36,19 +36,16 @@ public class Card {
 	@NotNull
 	private Integer expiresYear;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional=false)
-	@JoinColumn(name = "user_id", nullable = false)
-	@OnDelete(action = OnDeleteAction.CASCADE)
-	@JsonIgnore
-	private User user;
+	private Long userId;
+	
 
-	public Card(String number, Integer cvv, String bank, Integer expiresMonth, Integer expiresYear, User user) {
+	public Card(String number, Integer cvv, String bank, Integer expiresMonth, Integer expiresYear, Long userId) {
 		this.number = number;
 		this.cvv = cvv;
 		this.bank = bank;
 		this.expiresMonth = expiresMonth;
 		this.expiresYear = expiresYear;
-		this.user = user;
+		this.userId = userId;
 	}
 	
 }

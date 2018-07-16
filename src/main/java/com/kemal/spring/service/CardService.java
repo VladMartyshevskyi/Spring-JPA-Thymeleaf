@@ -1,18 +1,17 @@
 package com.kemal.spring.service;
-import javax.transaction.Transactional;
 
+import java.util.List;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-
 import com.kemal.spring.domain.Card;
 import com.kemal.spring.domain.CardRepository;
-import com.kemal.spring.domain.User;
+
+
 @Service
 public class CardService {
-	
+
 	@Autowired
 	private CardRepository cardRepository;
 
@@ -24,18 +23,19 @@ public class CardService {
 	@PreAuthorize("@SecurityService.isCardOwner(authentication, #id) or hasRole('ROLE_ADMIN')")
 	public void deleteById(Long id) {
 		cardRepository.deleteById(id);
-		
 	}
+
 	@Transactional
 	@PreAuthorize("@SecurityService.isCardOwner(authentication, #id) or hasRole('ROLE_ADMIN')")
 	public Card findById(Long id) {
 		return cardRepository.findById(id);
 	}
+
 	@Transactional
 	@PreAuthorize("@SecurityService.isCardOwner(authentication, #card) or hasRole('ROLE_ADMIN')")
 	public void update(Card card) {
 		Card foundCard = cardRepository.findById(card.getId());
-		if(foundCard != null) {
+		if (foundCard != null) {
 			foundCard.setBank(card.getBank());
 			foundCard.setCvv(card.getCvv());
 			foundCard.setExpiresMonth(card.getExpiresMonth());
@@ -43,6 +43,14 @@ public class CardService {
 			foundCard.setNumber(card.getNumber());
 		}
 		save(foundCard);
+	}
+
+	public List<Card> findByUserId(Long id) {
+		return cardRepository.findByUserId(id);
+	}
+
+	public void deleteByUserId(Long id) {
+		cardRepository.deleteByUserId(id);
 	}
 
 }

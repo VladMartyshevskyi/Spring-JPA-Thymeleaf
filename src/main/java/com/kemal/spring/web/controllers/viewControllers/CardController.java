@@ -33,8 +33,8 @@ public class CardController {
 
 	@GetMapping("/cards")
 	public String showCards(Model model, Principal principal) {
-		//List<Card> cards = userService.findByUsername(principal.getName()).getCards();
-		//model.addAttribute("cards", cards);
+		List<Card> cards = cardService.findByUserId(userService.findByUsername(principal.getName()).getId());
+		model.addAttribute("cards", cards);
 		return "website/cards";
 	}
 
@@ -53,7 +53,7 @@ public class CardController {
 
 	@PostMapping("/cards/new")
 	public String addCard(@ModelAttribute("card") @Valid final Card card, Principal principal) {
-		card.setUser(userService.findByUsername(principal.getName())); // ?? set user should be earlier
+		card.setUserId(userService.findByUsername(principal.getName()).getId()); // ?? set user should be earlier
 		cardService.save(card);
 		return "redirect:/cards";
 	}
