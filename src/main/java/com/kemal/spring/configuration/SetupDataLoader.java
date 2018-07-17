@@ -20,7 +20,7 @@ import java.util.List;
 @Component
 public class SetupDataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
-	@Autowired
+	
     private boolean alreadySetup = false;
 	@Autowired
     private UserService userService;
