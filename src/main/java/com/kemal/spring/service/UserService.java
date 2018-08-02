@@ -1,5 +1,6 @@
 package com.kemal.spring.service;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,6 +84,17 @@ public class UserService {
 		for(Role role : roles) {
 			roleService.assignRole(user, role);
 		}
+	}
+
+	public void createSocialUser(Principal principal) {
+		User existingUser = findByUsername(principal.getName());
+		if(existingUser == null) {
+			User user = new User();
+			user.setFacebookId(principal.getName());
+			user.setUsername(principal.getName());
+			save(user);
+		}
+		
 	}
 
 }

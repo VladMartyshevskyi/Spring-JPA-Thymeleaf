@@ -52,7 +52,7 @@ public class CardController {
 
 	@PostMapping("/cards/new")
 	public String addCard(@ModelAttribute("card") @Valid final Card card, Principal principal) {
-		card.setUserId(userService.findByUsername(principal.getName()).getId()); // ?? set user should be earlier
+		card.setUserId(userService.findByUsername(principal.getName()).getId()); 
 		cardService.save(card);
 		return "redirect:/cards";
 	}

@@ -34,11 +34,13 @@ public class LoginController {
     
     @GetMapping("/facebook-success")
     public String facebookSuccess(Principal principal) {
-    	OAuth2Authentication oAuth2Authentication = (OAuth2Authentication) principal;
+    /*	OAuth2Authentication oAuth2Authentication = (OAuth2Authentication) principal;
         Authentication authentication = oAuth2Authentication.getUserAuthentication();
         Map<String, String> authenticationDetails = (LinkedHashMap<String, String>) authentication.getDetails();
-        String username = authenticationDetails.get("name");
+        String username = authenticationDetails.get("name");*/
        // userService.createFacebookUser(principal.getName());
+    	
+    	userService.createSocialUser(principal);
 
     	return "redirect:/index";
     }
