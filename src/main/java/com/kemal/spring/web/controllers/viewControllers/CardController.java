@@ -20,10 +20,13 @@ import com.kemal.spring.domain.Card;
 import com.kemal.spring.service.CardService;
 import com.kemal.spring.service.UserService;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 public class CardController {
 
+	private static Logger logger = LoggerFactory.getLogger(CardController.class);
 	@Autowired
 	private CardService cardService;
 
@@ -32,6 +35,7 @@ public class CardController {
 
 	@GetMapping("/cards")
 	public String showCards(Model model, Principal principal) {
+		logger.debug("Method showCards was invoked with parameter principal: {}", principal);
 		List<Card> cards = cardService.findByUserId(userService.findByUsername(principal.getName()).getId());
 		model.addAttribute("cards", cards);
 		return "website/cards";
@@ -40,6 +44,7 @@ public class CardController {
 
 	@DeleteMapping("/cards/delete/{id}")
 	public ResponseEntity deleteCard(@PathVariable Long id) {
+		logger.debug("Method deleteCard was invoked with parameter id: {}", id);
 		cardService.deleteById(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
@@ -52,6 +57,7 @@ public class CardController {
 
 	@PostMapping("/cards/new")
 	public String addCard(@ModelAttribute("card") @Valid final Card card, Principal principal) {
+		logger.debug("Method addCard was invoked with parameter card: {}, principal: {}", card, principal);
 		card.setUserId(userService.findByUsername(principal.getName()).getId()); 
 		cardService.save(card);
 		return "redirect:/cards";
@@ -59,6 +65,7 @@ public class CardController {
 
 	@GetMapping("/cards/update/{id}")
 	public String getCardUpdateForm(Model model, @PathVariable Long id) {
+		logger.debug("Method getCardUpdateForm was invoked with parameter id: {}", id);
 		Card card = cardService.findById(id);
 		model.addAttribute("card", card);
 		return "website/editCard";
@@ -66,6 +73,7 @@ public class CardController {
 	
 	@PostMapping("/cards/update/{id}")
 	public String updateCard(@ModelAttribute("card") @Valid final Card card) {
+		logger.debug("Method updateCard was invoked with parameter card: {}", card);
 		cardService.update(card);
 		return "redirect:/cards";
 	}

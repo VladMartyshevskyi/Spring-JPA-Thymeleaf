@@ -39,7 +39,9 @@ public class LoginController {
         Map<String, String> authenticationDetails = (LinkedHashMap<String, String>) authentication.getDetails();
         String username = authenticationDetails.get("name");*/
        // userService.createFacebookUser(principal.getName());
-    	
+    	/*
+    	 * Todo: User authenticates via Facebook -> create new user if not exists -> authenticate with data from db
+    	 * */
     	userService.createSocialUser(principal);
 
     	return "redirect:/index";
