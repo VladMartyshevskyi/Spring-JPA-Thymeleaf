@@ -1,16 +1,25 @@
 package com.kemal.spring.service;
 
 import java.security.Principal;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.stereotype.Service;
 
 import com.kemal.spring.domain.Role;
@@ -31,7 +40,7 @@ public class UserService {
 	private RoleService roleService;
 	@Autowired
 	private CardService cardService;
-
+	
 	public List<User> findAll() {
 		logger.debug("Method findAll was invoked");
 		return userRepository.findAll();
@@ -47,6 +56,11 @@ public class UserService {
 		return userRepository.findByEmail(email);
 	}
 
+	public User findByFacebookId(String facebookId) {
+		logger.debug("Method findByFacebookId was invoked with id {}", facebookId);
+		return userRepository.findByFacebookId(facebookId);
+	}
+	
 	public User findById(Long id) {
 		logger.debug("Method findById was invoked with id {}", id);
 		return userRepository.findById(id);
@@ -95,15 +109,26 @@ public class UserService {
 		logger.info("User was updated {} with roles {}", user, roles);
 	}
 
-	public void createSocialUser(Principal principal) {
-		User existingUser = findByUsername(principal.getName());
-		if(existingUser == null) {
-			User user = new User();
+	public void authenticateSocialUser(Principal principal ) {
+		User user = findByFacebookId(principal.getName());
+		if(user == null) {
+			OAuth2Authentication oAuth2Authentication = (OAuth2Authentication) principal;
+	        Authentication authentication = oAuth2Authentication.getUserAuthentication();
+	        Map<String, String> authenticationDetails = (LinkedHashMap<String, String>) authentication.getDetails();
+	        user = new User();
+	  
 			user.setFacebookId(principal.getName());
-			user.setUsername(principal.getName());
+			user.setUsername(authenticationDetails.get("name"));
+			user.setName(authenticationDetails.get("name"));
+			user.setEnabled(true);
 			save(user);
+			roleService.assignRole(user, roleService.findByName("ROLE_USER"));
+			logger.info("Social user registered {} ", user);
 		}
-		
+		logger.debug("Logging with user {}", user);
+		UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(user.getUsername(), "", Arrays.asList(
+			      new SimpleGrantedAuthority("ROLE_USER")));
+		SecurityContextHolder.getContext().setAuthentication(token);
 	}
 
 }

@@ -21,7 +21,7 @@ import com.kemal.spring.domain.UserRoleRepository;
 @Service
 public class RoleService {
 	
-	private static Logger logger = LoggerFactory.getLogger(CardService.class);
+	private static Logger logger = LoggerFactory.getLogger(RoleService.class);
 
 	@Autowired
 	private RoleRepository roleRepository;
