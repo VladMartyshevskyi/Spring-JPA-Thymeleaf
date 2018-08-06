@@ -115,11 +115,12 @@ public class UserService {
 			OAuth2Authentication oAuth2Authentication = (OAuth2Authentication) principal;
 	        Authentication authentication = oAuth2Authentication.getUserAuthentication();
 	        Map<String, String> authenticationDetails = (LinkedHashMap<String, String>) authentication.getDetails();
-	        user= new User();
+	        user = new User();
 	  
 			user.setFacebookId(principal.getName());
 			user.setUsername(authenticationDetails.get("name"));
 			user.setName(authenticationDetails.get("name"));
+			user.setEnabled(true);
 			save(user);
 			roleService.assignRole(user, roleService.findByName("ROLE_USER"));
 			logger.info("Social user registered {} ", user);
