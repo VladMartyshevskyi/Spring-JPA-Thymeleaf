@@ -23,4 +23,12 @@ public class UserDto {
     private String password;
     private boolean enabled = true;
     
+    public UserDto(String name, String surname, String username, String email, String password) {
+    	this.name = name;
+    	this.surname = surname;
+    	this.username = username;
+    	this.email = email;
+    	this.password = password;
+    }
+    
 }

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.transaction.Transactional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -75,7 +76,8 @@ public class UserService {
 		logger.debug("Method save was invoked with user {}", user);
 		userRepository.save(user);
 	}
-
+	
+	@Transactional
 	public void delete(Long id) {
 		logger.debug("Method delete was invoked with id {}", id);
 		roleService.removeAllRoles(findById(id));
