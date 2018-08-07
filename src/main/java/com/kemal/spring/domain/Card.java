@@ -38,6 +38,8 @@ public class Card {
 	
 	private Long userId;
 	
+	private CardType cardType;
+	
 
 	public Card(String number, Integer cvv, String bank, Integer expiresMonth, Integer expiresYear, Long userId) {
 		this.number = number;

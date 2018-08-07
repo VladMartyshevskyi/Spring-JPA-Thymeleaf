@@ -1,0 +1,158 @@
+11:31:07.220 16809 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+11:31:07.275 16864 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+11:31:07.308 16897 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+11:48:06.444 15892 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+11:48:06.499 15947 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+11:48:06.521 15969 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+11:48:06.555 16003 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+11:49:44.472 15643 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+11:49:44.490 15661 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+11:49:44.513 15684 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+11:57:25.954 15737 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+11:57:25.977 15760 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+11:57:26.016 15799 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:04:13.755 16372 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:04:13.826 16443 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:04:13.865 16482 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:15:18.015 15253 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:15:18.077 15315 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:15:18.111 15349 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:19:12.446 18493 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:19:12.485 18532 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:19:12.515 18562 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:27:18.705 17967 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:27:18.788 18050 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:27:18.819 18081 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:30:44.955 12584 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:30:45.025 12654 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:30:45.056 12685 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:30:45.107 12736 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:40:09.915 17349 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:40:10.092 17526 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:40:10.171 17605 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:40:10.247 17681 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:41:05.147 15140 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:41:05.255 15248 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:41:05.311 15304 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:41:05.367 15360 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:43:14.482 17663 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:43:14.530 17711 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:43:14.583 17764 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:47:16.503 18983 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:47:16.595 19075 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:47:16.639 19119 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:47:16.671 19151 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:48:07.278 15567 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:48:07.341 15630 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:48:07.372 15661 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:48:07.428 15717 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:50:52.722 15502 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:50:52.773 15553 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:50:52.810 15590 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:55:18.377 18814 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:55:18.477 18914 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+12:55:18.529 18966 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:01:27.985 17377 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:01:28.034 17426 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:01:28.066 17458 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:03:56.404 19662 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:03:56.458 19716 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:03:56.492 19750 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:08:06.182 16777 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:08:06.236 16831 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:08:06.264 16859 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:09:06.274 17042 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:09:06.368 17136 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:09:06.397 17165 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:09:06.442 17210 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:11:19.725 15981 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:11:19.774 16030 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+13:11:19.818 16074 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+14:54:50.190 14233 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+14:54:53.716 17759 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+16:03:03.078 236  [main] ERROR com.kemal.spring.service.CardService
+				- Card with id null is not found to be updated
+16:05:03.226 559  [main] ERROR com.kemal.spring.service.CardService
+				- Card with id null is not found to be updated
+16:06:26.711 242  [main] ERROR com.kemal.spring.service.CardService
+				- Card with id null is not found to be updated
+16:13:45.559 17966 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+16:13:45.655 18062 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+16:13:45.695 18102 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)
+16:13:45.721 18128 [main] ERROR com.kemal.spring.service.UserService
+				- User from userDto already exists. userDto: UserDto(id=null, name=test, surname=test, username=test, email=test@test.com, password=test, enabled=true)

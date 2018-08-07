@@ -36,7 +36,7 @@ public class CardController {
 	@GetMapping("/cards")
 	public String showCards(Model model, Principal principal) {
 		logger.debug("Method showCards was invoked with parameter principal: {}", principal);
-		logger.debug("SEarching for username " + principal.getName());
+		logger.debug("Searching for username " + principal.getName());
 		List<Card> cards = cardService.findByUserId(userService.findByUsername(principal.getName()).getId());
 		model.addAttribute("cards", cards);
 		return "website/cards";
@@ -60,7 +60,7 @@ public class CardController {
 	public String addCard(@ModelAttribute("card") @Valid final Card card, Principal principal) {
 		logger.debug("Method addCard was invoked with parameter card: {}, principal: {}", card, principal);
 		card.setUserId(userService.findByUsername(principal.getName()).getId()); 
-		cardService.save(card);
+		cardService.updateCardTypeAndsave(card);
 		return "redirect:/cards";
 	}
 
