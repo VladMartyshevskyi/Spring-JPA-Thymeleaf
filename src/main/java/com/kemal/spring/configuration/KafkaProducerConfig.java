@@ -13,7 +13,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 
 @Configuration
-public class KafkaConfig {
+public class KafkaProducerConfig {
 
 	@Value("${kafka.bootstrap.servers}") 
 	private String bootstrapServers;
